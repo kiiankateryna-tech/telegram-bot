@@ -90,7 +90,7 @@ async def callback_check_sub(callback: types.CallbackQuery):
             [InlineKeyboardButton(text="Приєднатися до чату 💬", url=chat_invite.invite_link)]
         ])
         await callback.message.edit_text("Чудово! Доступ відкрито:", reply_markup=kb)
-    else:
+ else:
         try:
             await callback.answer("Ви все ще не підписалися на канал!", show_alert=True)
         except TelegramBadRequest:
