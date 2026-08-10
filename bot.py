@@ -5,7 +5,7 @@ from aiogram.filters import CommandStart, ChatMemberUpdatedFilter, JOIN_TRANSITI
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ChatPermissions, ChatMemberUpdated
 
 # 1. ВСТАВТЕ СВІЙ ТОКЕН ВІД BOTFATHER ЗАМІСТЬ "ВАШ_BOT_TOKEN_ТУТ"
-BOT_TOKEN = "8617221494:AAEoW2lVANWcaoAY86yQ2WRgrFoZkeAZlrE"
+BOT_TOKEN = "8617221494:AAES1IFswmcktq6qy3-3lTt7kI5C1A6kP8o"
 
 # 2. ВСТАВТЕ ID ВАШОГО КАНАЛУ ТА ЧАТУ (починаються з -100)
 CHANNEL_ID = "@banlab_community" # ID телеграм-каналу
