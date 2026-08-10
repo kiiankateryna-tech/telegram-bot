@@ -8,7 +8,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ChatPermis
 BOT_TOKEN = "8617221494:AAEoW2lVANWcaoAY86yQ2WRgrFoZkeAZlrE"
 
 # 2. ВСТАВТЕ ID ВАШОГО КАНАЛУ ТА ЧАТУ (починаються з -100)
-CHANNEL_ID = @banlab_community  # ID телеграм-каналу
+CHANNEL_ID = "@banlab_community" # ID телеграм-каналу
 CHAT_ID = -1004361320220     # ID телеграм-чату
 
 # 3. ВСТАВТЕ ПОСИЛАННЯ НА ВАШ КАНАЛ
