@@ -49,12 +49,15 @@ FULL_RIGHTS = ChatPermissions(
 )
 
 async def check_subscription(user_id: int) -> bool:
-    """Перевірка, чи підписаний користувач на канал."""
     try:
         member = await bot.get_chat_member(chat_id=CHANNEL_ID, user_id=user_id)
-        return member.status in ["creator", "administrator", "member"]
+        print(f"Статус користувача {user_id}: {member.status}")
+        
+        if member.status in ["member", "administrator", "creator"]:
+            return True
+        return False
     except Exception as e:
-        logging.error(f"Помилка перевірки підписки: {e}")
+        print(f"Помилка Telegram API: {e}")
         return False
 
 # 1. Команда /start у приватних повідомленнях з ботом
