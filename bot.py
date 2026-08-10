@@ -3,6 +3,7 @@ import logging
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import CommandStart, ChatMemberUpdatedFilter, JOIN_TRANSITION
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ChatPermissions, ChatMemberUpdated
+from aiogram.exceptions import TelegramBadRequest
 
 # 1. ВСТАВТЕ СВІЙ ТОКЕН ВІД BOTFATHER ЗАМІСТЬ "ВАШ_BOT_TOKEN_ТУТ"
 BOT_TOKEN = "8617221494:AAES1IFswmcktq6qy3-3lTt7kI5C1A6kP8o"
@@ -90,7 +91,10 @@ async def callback_check_sub(callback: types.CallbackQuery):
         ])
         await callback.message.edit_text("Чудово! Доступ відкрито:", reply_markup=kb)
     else:
-        await callback.answer("Ви все ще не підписалися на канал!", show_alert=True)
+      try:
+    await callback.answer("Ви все ще не підписалися на канал!", show_alert=True)
+except TelegramBadRequest:
+    pass
 
 # 2. Відстеження дій у КАНАЛІ (відписка / підписка назад)
 @dp.chat_member(F.chat.id == CHANNEL_ID)
