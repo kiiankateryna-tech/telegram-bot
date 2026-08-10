@@ -14,7 +14,10 @@ CHAT_ID = -1004361320220     # ID телеграм-чату
 # 3. ВСТАВТЕ ПОСИЛАННЯ НА ВАШ КАНАЛ
 CHANNEL_LINK = "https://t.me/banlab_community" 
 
-bot = Bot(token=BOT_TOKEN)
+from aiogram.client.session.aiohttp import AiohttpSession
+
+session = AiohttpSession(proxy="http://proxy.server:3128")
+bot = Bot(token=BOT_TOKEN, session=session)
 dp = Dispatcher()
 
 # Права: обмеження можливості писати (заборона писати)
