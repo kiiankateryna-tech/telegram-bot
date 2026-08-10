@@ -91,7 +91,7 @@ async def callback_check_sub(callback: types.CallbackQuery):
         ])
         await callback.message.edit_text("Чудово! Доступ відкрито:", reply_markup=kb)
     else:
-      try:
+        try:
     await callback.answer("Ви все ще не підписалися на канал!", show_alert=True)
 except TelegramBadRequest:
     pass
